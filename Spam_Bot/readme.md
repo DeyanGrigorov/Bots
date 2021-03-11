@@ -1,0 +1,1 @@
+Little project for spam bot using 'pyautogui' library.
