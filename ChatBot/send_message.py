@@ -1,7 +1,7 @@
 from respond_f import respond
 from related_f import related
 
-print("Hello I am I AI chatbot, you can chat with me,\n"
+print("Hello I am AI chat bot, you can chat with me,\n"
       "and ask me different questions.\n"
       "if you want to quit the chat session, just write 'quit', 'exit' or 'stop'."
       )
@@ -9,7 +9,7 @@ print("Hello I am I AI chatbot, you can chat with me,\n"
 
 def send_message(message):
     response = respond(message)
-    print(response)
+    print(f"Bot: {response}")
 
 
 if __name__ == "__main__":
@@ -22,4 +22,4 @@ if __name__ == "__main__":
             print('It was nice chatting with ya, bye!')
             break
         send_message(related_text)
-        print('Do you wanna ask another thing?')
+        print('\nAsk me another thing or write "help" to see what i can tell you')
