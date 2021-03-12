@@ -1,5 +1,6 @@
 from respond_f import respond
 from related_f import related
+import time
 
 print("Hello I am AI chat bot, you can chat with me,\n"
       "and ask me different questions.\n"
@@ -9,6 +10,8 @@ print("Hello I am AI chat bot, you can chat with me,\n"
 
 def send_message(message):
     response = respond(message)
+    print("Typing...")
+    time.sleep(5)
     print(f"Bot: {response}")
 
 
