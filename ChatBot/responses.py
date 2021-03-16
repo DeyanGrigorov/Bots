@@ -1,7 +1,8 @@
-name = 'TestBot'
+name = 'Jaymz'
 mood = 'great'
 favourite_music_band = 'Metallica'
 genre = 'Thrash Metal, Power Metal or Melodic Heavy Metal'
+to_quit = 'To exit the chat session press the upper right "x"'
 
 responses = {
 
@@ -55,6 +56,16 @@ responses = {
         f"My favourite music genres are {genre}",
         f"{genre}!",
         f"It is {genre}!"
+    ],
+    'bye': [
+        f'Goodbye my friend! {to_quit}',
+        f'It was nice chatting with ya! {to_quit}',
+        f'Hope I see you another time! {to_quit}'
+    ],
+    'Who are you?': [
+        f'I am {name} a ChatBot with a great taste for music',
+        f'I am a not so smart ChatBot with the name {name}',
+        f"I'm just a code in my core but someday I may become something more!"
     ]
 }
 

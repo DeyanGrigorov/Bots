@@ -13,6 +13,10 @@ def related(x_text):
         y_text = "music"
     elif 'genre' in x_text:
         y_text = 'genre'
+    elif 'bye' in x_text or 'goodbye' in x_text or 'see ya' in x_text or 'see you' in x_text:
+        y_text = 'bye'
+    elif 'are you' in x_text:
+        y_text = 'Who are you?'
     else:
         y_text = ""
     return y_text

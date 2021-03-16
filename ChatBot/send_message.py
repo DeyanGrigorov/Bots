@@ -3,14 +3,6 @@ from related_f import related
 import time
 
 
-bot_name = 'Bot'
-
-print("Hello I am AI chat bot, you can chat with me,\n"
-      "and ask me different questions.\n"
-      "if you want to quit the chat session, just write 'quit', 'exit' or 'stop'."
-      )
-
-
 def get_response(message):
     related_text = related(message)
     response = respond(related_text)

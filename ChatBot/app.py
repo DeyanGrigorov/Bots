@@ -1,6 +1,7 @@
 from tkinter import *
-from send_message import get_response, bot_name
-import time
+from send_message import get_response
+from responses import name
+
 
 BG_GRAY = '#ABB2B9'
 BG_COLOR = '#17202A'
@@ -21,20 +22,23 @@ class Chat_app:
     def _setup_main_window(self):
         self.window.title('Chat')
         self.window.resizable(width=False, height=False)
-        self.window.configure(width=470, height=550, bg=BG_COLOR)
+        self.window.configure(width=800, height=900, bg=BG_COLOR)
 
         # head label
-        head_label = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR, text='Welcome', font=FONT_BOLD, pady=10)
+        head_label = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR,
+                           text=f"Welcome, you are in a chat session, with {name}\n"
+                           , font=FONT_BOLD, pady=10)
         head_label.place(relwidth=1)
 
-        # tiny divider
-        line = Label(self.window, width=450, bg=BG_GRAY)
-        line.place(relwidth=1, rely=0.07, relheight=0.012)
+        # # tiny divider
+        # line = Label(self.window, width=450, bg=BG_GRAY)
+        # line.place(relwidth=1, relheight=0.012)
 
         # text_widget
         self.text_widget = Text(self.window, width=20, height=2, bg=BG_COLOR,
                                 font=FONT, fg=TEXT_COLOR, padx=5, pady=5)
         self.text_widget.place(relheight=0.745, relwidth=1, rely=0.08)
+        self.text_widget.insert('end', "Write 'help' to see what I can do\n\n")
         self.text_widget.configure(cursor='arrow', state=DISABLED)
 
         # Scrollbar
@@ -59,18 +63,19 @@ class Chat_app:
 
     def _on_enter_pressed(self, event):
         message = self.msg_entry.get()
-        self._insert_message(message, 'You')
+        self._insert_message_sender(message, 'You')
+        self._bot_message(message)
 
-    def _insert_message(self, message, sender):
-        if not message:
-            return
+    def _insert_message_sender(self, message, sender):
+
         self.msg_entry.delete(0, END)
         message1 = f"{sender}: {message}\n\n"
         self.text_widget.configure(state=NORMAL)
         self.text_widget.insert(END, message1)
         self.text_widget.configure(state=DISABLED)
 
-        message2 = f"Typing...\n\n{bot_name}: {get_response(message)}\n\n"
+    def _bot_message(self, message):
+        message2 = f"{name}: {get_response(message)}\n\n"
         self.text_widget.configure(state=NORMAL)
         self.text_widget.insert(END, message2)
         self.text_widget.configure(state=DISABLED)
