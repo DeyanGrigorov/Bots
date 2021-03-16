@@ -1,1 +1,1 @@
-Little project for chatbot , still unfinished.
+Little project for ChatBot , still unfinished.

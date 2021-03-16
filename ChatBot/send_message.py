@@ -1,6 +1,6 @@
+from ChatBot.realted_f import related
 from respond_f import respond
-from related_f import related
-import time
+
 
 
 def get_response(message):
