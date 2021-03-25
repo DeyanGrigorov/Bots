@@ -1,19 +1,20 @@
-name = 'Jaymz'
+name = 'Bot'
 mood = 'great'
 favourite_music_band = 'Metallica'
 genre = 'Thrash Metal, Power Metal or Melodic Heavy Metal'
 to_quit = 'To exit the chat session press the upper right "x"'
+real_name = 'Jaymz'
 
 responses = {
 
     "What's your name?": [
-        f"They call me {name}",
-        f"My name is {name}",
-        f"Ich bin {name}",
-        f"I am {name}",
-        f"I'm {name}",
+        f"They call me {real_name}",
+        f"My name is {real_name}",
+        f"Ich bin {real_name}",
+        f"I am {real_name}",
+        f"I'm {real_name}",
         f"I am the Mighty James Hetfield!\n"
-        f"just kidding, my name is {name}"
+        f"just kidding, my name is {real_name}"
     ],
 
     "What's the weather like?": [
